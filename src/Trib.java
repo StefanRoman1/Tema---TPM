@@ -8,6 +8,7 @@ public class Trib {
     public Oala oala;
 
     public static boolean allFeed = false;
+    public static boolean oalaEmpty = false;
 
     public Trib(int numarSalbatici, int capacitateOala) throws InterruptedException {
         this.numarSalbatici = numarSalbatici;
@@ -24,8 +25,8 @@ public class Trib {
             s.join();
         }
         System.out.println("Toti salbaticii au mancat");
-        bucatar.join();
         allFeed = true;
+        bucatar.join();
         System.out.println("Bucatarul a mancat si el");
     }
 }

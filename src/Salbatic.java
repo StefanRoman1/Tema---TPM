@@ -6,9 +6,18 @@ public class Salbatic extends Thread{
     }
 
     public void run() {
-        oala.lock.lock();
-        System.out.println("Un salbatic vrea sa manance iar capacitatea este " + oala.capacitate);
-        oala.mananca();
-        oala.lock.unlock();
+        while(true) {
+            oala.lock.lock();
+            try{
+                if(oala.capacitate > 0) {
+                    oala.mananca();
+                    System.out.println("Salbaticul a mancat");
+                    break;
+                }
+            } finally {
+                oala.lock.unlock();
+
+            }
         }
     }
+}

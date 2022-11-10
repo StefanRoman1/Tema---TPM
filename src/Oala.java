@@ -12,14 +12,10 @@ public class Oala {
     }
 
     public void mananca() {
-        if(capacitate == 0) {
-            umple();
-        }
         capacitate = capacitate - 1;
     }
 
     public void umple() {
-        System.out.println("Bucatarul a umplut oala");
         capacitate = capacitateMaxima;
     }
 }
